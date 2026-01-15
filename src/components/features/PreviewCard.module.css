@@ -1,0 +1,172 @@
+.cardContainer {
+  width: 100%;
+  max-width: 42rem;
+  margin: 2rem auto 0;
+  animation: slideUp 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glassPanel {
+  padding: 0.25rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.image {
+  object-fit: cover;
+  transition: all 0.5s;
+  width: 100%;
+  height: 100%;
+}
+
+.imageShorts {
+  object-fit: contain;
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.imageWrapper:hover .imageOverlay {
+  opacity: 1;
+}
+
+.qualityBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 5;
+}
+
+.controlsSection {
+  padding: 1.5rem;
+}
+
+.controlsLayout {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.qualitySelector {
+  display: flex;
+  background: var(--bg-glass-heavy);
+  padding: 0.25rem;
+  border-radius: 0.75rem;
+  width: 100%;
+}
+
+.qualityButton {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text-secondary);
+}
+
+.qualityButton:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+.activeQuality {
+  background: var(--color-crystal-blue);
+  color: #0B0F1A;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.activeQuality:hover {
+  background: var(--color-crystal-blue);
+  color: #0B0F1A;
+}
+
+.downloadSection {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.fileTypeSelector {
+  display: flex;
+  background: var(--bg-glass-heavy);
+  border-radius: 0.75rem;
+  padding: 0.25rem;
+}
+
+.fileTypeButton {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text-muted);
+}
+
+.fileTypeButton:hover {
+  color: white;
+}
+
+.activeFileType {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.downloadBtn {
+  flex: 1;
+  min-width: 140px;
+  gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .controlsSection {
+    padding: 2rem;
+  }
+  .controlsLayout {
+    flex-direction: row;
+  }
+  .qualitySelector {
+    width: auto;
+  }
+  .downloadSection {
+    width: auto;
+  }
+  .downloadBtn {
+    flex: none;
+  }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
