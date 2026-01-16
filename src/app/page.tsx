@@ -18,8 +18,17 @@ export default function Home() {
 
       {/* Simple Footer */}
       <footer className={`${styles.footer} glass-panel`}>
-        <p>© {new Date().getFullYear()} Thumb Magnet. Educational use only.</p>
-      </footer>
+  <p>
+    © {new Date().getFullYear()} Thumb Magnet. Developed by{" "}
+    <a
+      href="https://codiverse-dev.vercel.app/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Codiverse Web Services
+    </a>
+  </p>
+</footer>
     </main>
   );
 }
